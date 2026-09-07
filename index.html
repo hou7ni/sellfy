@@ -459,6 +459,61 @@ body{
   .hero h1{margin:0 auto 14px!important}
 }
 
+/* Correctif global hero : contenu prioritaire, téléphones décoratifs sur les côtés */
+.hero{position:relative!important;padding-top:58px!important;overflow:visible!important}
+.hero .eyebrow{position:relative!important;z-index:8!important;margin:0 0 8px!important}
+.hero h1,.hero p,.actions{position:relative!important;z-index:8!important}
+.hero-phones{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  pointer-events:none!important;
+  z-index:2!important;
+}
+.hero-phone{
+  position:absolute!important;
+  width:155px!important;
+  height:300px!important;
+  opacity:.9!important;
+}
+.hero-phone.one{left:clamp(16px,7vw,130px)!important;top:47%!important;transform:rotate(-9deg)!important}
+.hero-phone.two{left:auto!important;right:clamp(16px,7vw,130px)!important;top:43%!important;margin:0!important;transform:rotate(9deg)!important;width:165px!important;height:320px!important}
+.hero-phone.three{display:none!important}
+.hero .actions{margin-top:16px!important}
+.hero .actions,.hero .cta,.hero button,.hero a{z-index:12!important}
+.hero-phones + *{position:relative!important}
+@media(min-width:721px){
+  .hero{min-height:720px!important;padding:62px 20px 24px!important}
+  .hero-phone.one{left:clamp(20px,9vw,180px)!important;top:42%!important;width:165px!important;height:320px!important}
+  .hero-phone.two{right:clamp(20px,9vw,180px)!important;top:39%!important;width:175px!important;height:340px!important}
+}
+@media(max-width:720px){
+  .hero{padding:58px 16px 260px!important;min-height:680px!important}
+  .hero h1{position:relative!important;z-index:10!important}
+  .hero-phones{top:auto!important;bottom:0!important;height:250px!important}
+  .hero-phone.one{left:5%!important;top:auto!important;bottom:-20px!important;width:125px!important;height:240px!important}
+  .hero-phone.two{right:5%!important;top:auto!important;bottom:-28px!important;width:132px!important;height:255px!important}
+}
+/* Formes et dessins continus sur toute la page */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.7;
+  background:
+    radial-gradient(circle at 8% 8%,rgba(255,183,178,.24) 0 2px,transparent 3px),
+    radial-gradient(circle at 88% 18%,rgba(239,237,244,.5) 0 1.5px,transparent 2.5px),
+    radial-gradient(circle at 18% 78%,rgba(232,239,232,.55) 0 2px,transparent 3px);
+  background-size:62px 62px,78px 78px,94px 94px;
+  mask-image:linear-gradient(180deg,transparent 0%,black 8%,black 92%,transparent 100%);
+}
+section{position:relative!important}
+section::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:.55;
+  background:
+    radial-gradient(ellipse 280px 170px at 8% 35%,rgba(255,183,178,.18),transparent 70%),
+    radial-gradient(ellipse 240px 220px at 92% 62%,rgba(239,237,244,.22),transparent 72%);
+}
+
 </style></head>
 <body><div class="living-bg"></div><div class="grain"></div>
 <nav><a class="brand" href="#"><i></i>Sellfy</a><div class="links"><a href="#how">Comment ça marche</a><a href="#preview">Produit</a><a href="#faq">FAQ</a></div><a class="dark-btn" href="#early">Commencer gratuitement</a></nav>
