@@ -105,6 +105,42 @@ body{overflow-x:hidden}
   .hero{padding-top:34px}
   .hero .eyebrow{margin:0 0 14px}
 }
+
+/* PC : accès immédiat à l'information + navigation toujours disponible */
+@media(min-width:721px){
+  body{padding-top:76px}
+  nav{
+    position:fixed;top:14px;left:50%;transform:translateX(-50%);
+    margin:0;z-index:100;width:min(1120px,calc(100% - 48px));
+    transition:padding .25s ease,box-shadow .25s ease,background .25s ease
+  }
+  .hero{
+    padding:38px 20px 24px;
+    min-height:calc(100vh - 76px);
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start
+  }
+  .hero h1{
+    font-size:clamp(54px,5.9vw,82px);
+    line-height:.92;
+    max-width:900px;
+    margin:0 auto 18px
+  }
+  .headline-line{padding:.04em .03em .06em}
+  .hero .eyebrow{margin:0 0 12px}
+  .hero p{font-size:17px;line-height:1.45;max-width:610px}
+  .actions{margin-top:20px}
+  .hero-phones{height:235px;margin-top:28px}
+  .hero-phone{width:132px;height:232px;border-width:4px}
+  .hero-phone.two{width:148px;height:248px;margin-left:-74px}
+  .hero-phone.one{left:20%;bottom:8px}
+  .hero-phone.three{right:20%;bottom:8px}
+  .hero-phone .mini-title{font-size:16px;margin-top:24px}
+  .hero-phone .mini-ui{margin-top:14px;padding:10px}
+  .hero-phone .mini-button{bottom:11px;padding:8px}
+  .scenarios{padding-top:58px;padding-bottom:72px}
+  .preview{padding-top:76px;padding-bottom:76px}
+}
+
 </style></head>
 <body><div class="living-bg"></div><div class="grain"></div>
 <nav><a class="brand" href="#"><i></i>Sellfy</a><div class="links"><a href="#how">Comment ça marche</a><a href="#preview">Produit</a><a href="#faq">FAQ</a></div><a class="dark-btn" href="#early">Commencer gratuitement</a></nav>
