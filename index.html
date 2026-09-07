@@ -285,6 +285,44 @@ body{overflow-x:hidden}
   .wait::after{width:115vw;height:160px;left:-48vw}
 }
 
+/* Correctif final du premier écran : la headline doit apparaître immédiatement sous la navigation */
+body{padding-top:0!important}
+@media(min-width:721px){
+  nav{top:14px}
+  .hero{
+    min-height:100svh;
+    padding:88px 20px 20px!important;
+  }
+  .hero .eyebrow{margin:0 0 8px!important}
+  .hero h1{margin:0 auto 14px!important}
+  .hero p{margin:0 auto!important}
+  .actions{margin-top:16px!important}
+  .hero-phones{margin-top:20px!important;height:220px}
+}
+@media(max-width:720px){
+  nav{top:8px}
+  .hero{
+    min-height:100svh;
+    padding:76px 16px 18px!important;
+  }
+  .hero .eyebrow{margin:0 0 6px!important;font-size:10px}
+  .hero h1{
+    font-size:clamp(44px,12.5vw,56px)!important;
+    margin:0 auto 14px!important;
+    line-height:.94!important;
+  }
+  .hero p{font-size:15px!important;line-height:1.42!important}
+  .actions{margin-top:16px!important}
+  .hero-phones{height:190px!important;margin-top:20px!important}
+  .hero-phone{width:100px!important;height:180px!important}
+  .hero-phone.two{width:112px!important;height:194px!important;margin-left:-56px!important}
+  .hero-phone .mini-title{font-size:13px!important;margin-top:20px!important}
+  .hero-phone .mini-ui{display:none}
+  .hero-phone .mini-button{padding:7px!important;bottom:9px!important}
+}
+/* Aucun espace fantôme avant le contenu */
+nav + .hero{margin-top:0!important}
+
 </style></head>
 <body><div class="living-bg"></div><div class="grain"></div>
 <nav><a class="brand" href="#"><i></i>Sellfy</a><div class="links"><a href="#how">Comment ça marche</a><a href="#preview">Produit</a><a href="#faq">FAQ</a></div><a class="dark-btn" href="#early">Commencer gratuitement</a></nav>
