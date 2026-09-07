@@ -447,6 +447,27 @@ body{
   .wait::after{width:400px!important;height:320px!important;left:-180px!important}
 }
 
+/* HERO : supprimer réellement le vide entre la navigation et la headline */
+.hero > .eyebrow{display:none!important}
+@media(min-width:721px){
+  .hero{
+    padding:68px 20px 20px!important;
+    min-height:100svh!important;
+  }
+  .hero h1{
+    margin:0 auto 14px!important;
+  }
+}
+@media(max-width:720px){
+  .hero{
+    padding:64px 16px 18px!important;
+    min-height:100svh!important;
+  }
+  .hero h1{
+    margin:0 auto 14px!important;
+  }
+}
+
 </style></head>
 <body><div class="living-bg"></div><div class="grain"></div>
 <nav><a class="brand" href="#"><i></i>Sellfy</a><div class="links"><a href="#how">Comment ça marche</a><a href="#preview">Produit</a><a href="#faq">FAQ</a></div><a class="dark-btn" href="#early">Commencer gratuitement</a></nav>
