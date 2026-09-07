@@ -172,6 +172,119 @@ body{overflow-x:hidden}
   animation:headlineFadeIn .75s cubic-bezier(.16,1,.3,1) both;
 }
 
+
+/* Continuité visuelle : plus aucun changement brutal de couleur entre les sections */
+.scenarios,.preview,.testimonials,.faq,.wait{
+  position:relative;
+  isolation:isolate;
+  background:#FDFCF8!important;
+}
+.scenarios::before,.preview::after,.testimonials::before,.faq::before,.wait::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.52;
+}
+/* Dégradés très doux qui restent dans la même famille de couleurs */
+.scenarios{
+  background:
+    radial-gradient(700px 420px at 8% 42%,rgba(255,183,178,.14),transparent 68%),
+    radial-gradient(640px 420px at 92% 60%,rgba(232,239,232,.20),transparent 70%),
+    #FDFCF8!important;
+}
+.preview{
+  background:
+    radial-gradient(680px 460px at 10% 18%,rgba(255,183,178,.17),transparent 70%),
+    radial-gradient(720px 480px at 88% 75%,rgba(232,239,232,.19),transparent 70%),
+    radial-gradient(500px 360px at 52% 40%,rgba(239,237,244,.18),transparent 72%),
+    #FDFCF8!important;
+}
+.testimonials{
+  background:
+    radial-gradient(650px 430px at 90% 12%,rgba(255,183,178,.13),transparent 70%),
+    radial-gradient(620px 440px at 5% 78%,rgba(239,237,244,.17),transparent 70%),
+    #FDFCF8!important;
+}
+.faq{
+  background:
+    radial-gradient(680px 460px at 8% 50%,rgba(239,237,244,.22),transparent 72%),
+    radial-gradient(680px 460px at 92% 50%,rgba(232,239,232,.18),transparent 72%),
+    #FDFCF8!important;
+}
+.wait{
+  background:
+    radial-gradient(700px 500px at 15% 25%,rgba(255,183,178,.16),transparent 70%),
+    radial-gradient(650px 480px at 85% 75%,rgba(232,239,232,.18),transparent 70%),
+    #FDFCF8!important;
+}
+/* Dessins transparents : formes en contour pour relier les sections sans créer de blocs */
+.preview::before{
+  content:"";
+  position:absolute;
+  width:72vw;height:260px;
+  left:-18vw;top:13%;
+  border:1.5px solid rgba(41,37,36,.12);
+  border-radius:50% 42% 58% 46%;
+  transform:rotate(-9deg);
+  background:none!important;
+  filter:none!important;
+  opacity:.75;
+  z-index:-1;
+}
+.preview::after{
+  width:54vw;height:180px;
+  right:-20vw;bottom:12%;
+  border:1.5px solid rgba(231,135,128,.17);
+  border-radius:60% 40% 48% 52%;
+  transform:rotate(14deg);
+}
+.scenarios::before{
+  width:48vw;height:170px;
+  right:-12vw;top:8%;
+  border:1px solid rgba(41,37,36,.10);
+  border-radius:999px;
+  transform:rotate(-18deg);
+}
+.testimonials::before{
+  width:44vw;height:200px;
+  left:-15vw;top:18%;
+  border:1.5px solid rgba(231,135,128,.14);
+  border-radius:44% 56% 38% 62%;
+  transform:rotate(18deg);
+}
+.faq::before{
+  width:60vw;height:230px;
+  right:-18vw;top:20%;
+  border:1.5px solid rgba(41,37,36,.09);
+  border-radius:50%;
+  transform:rotate(-12deg);
+}
+.wait::after{
+  width:52vw;height:190px;
+  left:-14vw;bottom:14%;
+  border:1.5px solid rgba(231,135,128,.14);
+  border-radius:58% 42% 55% 45%;
+  transform:rotate(-15deg);
+  background:none!important;
+  filter:none!important;
+}
+.preview:before,.preview:after,.scenarios:before,.testimonials:before,.faq:before,.wait:after{
+  animation:softShapeFloat 12s ease-in-out infinite;
+}
+@keyframes softShapeFloat{
+  0%,100%{translate:0 0}
+  50%{translate:18px -14px}
+}
+@media(max-width:720px){
+  .preview::before{width:125vw;height:230px;left:-48vw;top:10%;opacity:.62}
+  .preview::after{width:105vw;height:150px;right:-48vw;bottom:14%;opacity:.5}
+  .scenarios::before{width:95vw;height:140px;right:-38vw}
+  .testimonials::before{width:100vw;height:180px;left:-45vw}
+  .faq::before{width:115vw;height:200px;right:-55vw}
+  .wait::after{width:115vw;height:160px;left:-48vw}
+}
+
 </style></head>
 <body><div class="living-bg"></div><div class="grain"></div>
 <nav><a class="brand" href="#"><i></i>Sellfy</a><div class="links"><a href="#how">Comment ça marche</a><a href="#preview">Produit</a><a href="#faq">FAQ</a></div><a class="dark-btn" href="#early">Commencer gratuitement</a></nav>
