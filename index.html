@@ -151,6 +151,27 @@ body{overflow-x:hidden}
 #squares-bg{opacity:.62!important}
 @media(min-width:721px){#squares-bg{opacity:.66!important}}
 
+
+/* Mobile : navigation fixe, hero plus direct et animations d'entrée */
+@media(max-width:720px){
+  body{padding-top:74px}
+  nav{
+    position:fixed;top:10px;left:50%;transform:translateX(-50%);
+    margin:0!important;z-index:100;width:calc(100% - 24px)
+  }
+  .hero{padding-top:22px}
+  .hero .eyebrow{margin-bottom:10px}
+  .hero h1{margin-top:0}
+  #squares-bg{opacity:.62!important}
+}
+@keyframes headlineFadeIn{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.hero h1{
+  animation:headlineFadeIn .75s cubic-bezier(.16,1,.3,1) both;
+}
+
 </style></head>
 <body><div class="living-bg"></div><div class="grain"></div>
 <nav><a class="brand" href="#"><i></i>Sellfy</a><div class="links"><a href="#how">Comment ça marche</a><a href="#preview">Produit</a><a href="#faq">FAQ</a></div><a class="dark-btn" href="#early">Commencer gratuitement</a></nav>
