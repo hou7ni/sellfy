@@ -323,6 +323,130 @@ body{padding-top:0!important}
 /* Aucun espace fantôme avant le contenu */
 nav + .hero{margin-top:0!important}
 
+/* Fond SELLFY unifié : dégradés organiques + dessins doux, sans contours agressifs */
+body{
+  background:
+    radial-gradient(1000px 620px at -8% 12%,rgba(255,183,178,.18),transparent 68%),
+    radial-gradient(900px 700px at 108% 28%,rgba(239,237,244,.34),transparent 70%),
+    radial-gradient(820px 620px at 48% 88%,rgba(232,239,232,.28),transparent 72%),
+    #FDFCF8!important;
+}
+.scenarios,.preview,.testimonials,.faq,.wait{
+  overflow:hidden;
+  background-color:transparent!important;
+  background-image:
+    radial-gradient(700px 440px at 10% 20%,rgba(255,183,178,.18),transparent 70%),
+    radial-gradient(620px 480px at 90% 65%,rgba(232,239,232,.24),transparent 72%),
+    radial-gradient(560px 360px at 50% 100%,rgba(239,237,244,.22),transparent 72%)!important;
+}
+/* On supprime tous les anciens traits/contours qui coupent la continuité */
+.scenarios::before,.preview::before,.preview::after,
+.testimonials::before,.faq::before,.wait::after{
+  border:0!important;
+  border-radius:0!important;
+  transform:none!important;
+  filter:none!important;
+}
+/* Dessins organiques transparents : aucune ligne noire, uniquement des formes pastel */
+.scenarios::before{
+  content:"";
+  display:block;
+  width:420px!important;height:420px!important;
+  right:-170px!important;top:35px!important;
+  opacity:.42!important;
+  background:
+    radial-gradient(circle at 28% 28%,transparent 0 16%,rgba(255,183,178,.22) 16.5% 17.5%,transparent 18%),
+    radial-gradient(circle at 62% 44%,transparent 0 22%,rgba(239,237,244,.32) 22.5% 23.5%,transparent 24%),
+    radial-gradient(circle at 42% 74%,transparent 0 11%,rgba(232,239,232,.42) 11.5% 12.5%,transparent 13%)!important;
+  animation:softShapeFloat 14s ease-in-out infinite!important;
+}
+.preview::before{
+  content:"";
+  display:block;
+  width:560px!important;height:430px!important;
+  left:-210px!important;top:5%!important;
+  opacity:.6!important;
+  background:
+    radial-gradient(ellipse at 30% 45%,rgba(255,183,178,.26),transparent 38%),
+    radial-gradient(ellipse at 62% 22%,rgba(239,237,244,.32),transparent 34%),
+    radial-gradient(ellipse at 72% 74%,rgba(232,239,232,.34),transparent 32%)!important;
+  animation:softShapeFloat 16s ease-in-out infinite!important;
+}
+.preview::after{
+  content:"";
+  display:block;
+  width:520px!important;height:360px!important;
+  right:-180px!important;bottom:8%!important;
+  opacity:.55!important;
+  background:
+    radial-gradient(ellipse at 42% 48%,rgba(255,183,178,.22),transparent 40%),
+    radial-gradient(ellipse at 68% 62%,rgba(239,237,244,.28),transparent 35%)!important;
+  animation:softShapeFloat 18s ease-in-out infinite reverse!important;
+}
+.testimonials::before{
+  content:"";
+  display:block;
+  width:500px!important;height:360px!important;
+  left:-170px!important;top:10%!important;
+  opacity:.45!important;
+  background:
+    radial-gradient(circle at 36% 40%,rgba(255,183,178,.28),transparent 32%),
+    radial-gradient(circle at 70% 68%,rgba(232,239,232,.3),transparent 25%)!important;
+}
+.faq::before{
+  content:"";
+  display:block;
+  width:620px!important;height:420px!important;
+  right:-210px!important;top:12%!important;
+  opacity:.5!important;
+  background:
+    radial-gradient(ellipse at 40% 40%,rgba(239,237,244,.38),transparent 42%),
+    radial-gradient(ellipse at 72% 72%,rgba(255,183,178,.18),transparent 28%)!important;
+}
+.wait::after{
+  content:"";
+  display:block;
+  width:620px!important;height:420px!important;
+  left:-210px!important;bottom:4%!important;
+  opacity:.55!important;
+  background:
+    radial-gradient(ellipse at 48% 50%,rgba(255,183,178,.3),transparent 40%),
+    radial-gradient(ellipse at 74% 35%,rgba(232,239,232,.3),transparent 32%)!important;
+}
+/* Dessins abstraits en arrière-plan, très subtils */
+.hero::before,.preview h2::before,.testimonials h2::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  opacity:.38;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 20% 50%,rgba(231,135,128,.24) 0 2px,transparent 3px),
+    radial-gradient(circle at 50% 20%,rgba(41,37,36,.08) 0 2px,transparent 3px),
+    radial-gradient(circle at 80% 70%,rgba(231,135,128,.18) 0 2px,transparent 3px);
+}
+.hero::before{
+  width:380px;height:230px;left:50%;top:28%;
+  transform:translateX(-50%) rotate(-8deg);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse,black 20%,transparent 72%);
+}
+.preview h2,.testimonials h2{position:relative}
+.preview h2::before,.testimonials h2::after{
+  width:180px;height:90px;left:50%;top:-45px;
+  transform:translateX(-50%);
+  background-size:34px 34px;
+  mask-image:linear-gradient(90deg,transparent,black,transparent);
+}
+@media(max-width:720px){
+  .scenarios::before{width:330px!important;height:330px!important;right:-145px!important}
+  .preview::before{width:390px!important;height:330px!important;left:-180px!important}
+  .preview::after{width:360px!important;height:300px!important;right:-160px!important}
+  .testimonials::before{width:360px!important;height:300px!important;left:-170px!important}
+  .faq::before{width:400px!important;height:330px!important;right:-190px!important}
+  .wait::after{width:400px!important;height:320px!important;left:-180px!important}
+}
+
 </style></head>
 <body><div class="living-bg"></div><div class="grain"></div>
 <nav><a class="brand" href="#"><i></i>Sellfy</a><div class="links"><a href="#how">Comment ça marche</a><a href="#preview">Produit</a><a href="#faq">FAQ</a></div><a class="dark-btn" href="#early">Commencer gratuitement</a></nav>
