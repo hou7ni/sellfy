@@ -447,25 +447,16 @@ body{
   .wait::after{width:400px!important;height:320px!important;left:-180px!important}
 }
 
-/* HERO : supprimer réellement le vide entre la navigation et la headline */
-.hero > .eyebrow{display:none!important}
+/* HERO : headline proche de la navigation sans masquer aucun contenu */
 @media(min-width:721px){
-  .hero{
-    padding:68px 20px 20px!important;
-    min-height:100svh!important;
-  }
-  .hero h1{
-    margin:0 auto 14px!important;
-  }
+  .hero{padding:68px 20px 20px!important;min-height:100svh!important}
+  .hero .eyebrow{margin:0 0 8px!important}
+  .hero h1{margin:0 auto 14px!important}
 }
 @media(max-width:720px){
-  .hero{
-    padding:64px 16px 18px!important;
-    min-height:100svh!important;
-  }
-  .hero h1{
-    margin:0 auto 14px!important;
-  }
+  .hero{padding:64px 16px 18px!important;min-height:100svh!important}
+  .hero .eyebrow{margin:0 0 6px!important}
+  .hero h1{margin:0 auto 14px!important}
 }
 
 </style></head>
